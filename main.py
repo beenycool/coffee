@@ -1,33 +1,32 @@
 # Coffee prices
-Espresso = 2.50
-Americano = 3.00
-Latte = 2.50
-Cappuccino = 3.00
-Macchiato = 2.50
-Mocha = 3.50
-Flat_White = 2.50
+coffee_prices = {
+    "Espresso": 2.50,
+    "Americano": 3.00,
+    "Latte": 2.50,
+    "Cappuccino": 3.00,
+    "Macchiato": 2.50,
+    "Mocha": 3.50,
+    "Flat White": 2.50,
+}
 
 # Welcome message
-print("The Coffee Shop")
-print("Welcome")
+print("The Coffee Shop\nWelcome")
 print("We serve the following coffees:")
-print(" > Espresso")
-print(" > Latte")
-print(" > Macchiato")
-print(" > Mocha")
-print(" > Flat White")
-# what cofee would they like
-coffee = input("What coffee would you like?")
-if coffee = Esp
-total = {coffee}
-# Get the size of the coffee
-size = int(input("What size would you like (1, 2, 3)? "))
+for coffee in coffee_prices:
+    print(f" > {coffee}")
 
-# Check for valid size input
-if size > 3:
-    print("You cannot pick a number bigger than 3")
+# Ask for coffee choice
+coffee = input("What coffee would you like? ")
+
+if coffee not in coffee_prices:
+    print("Sorry, we don't serve that coffee.")
 else:
-    print(f"You have chosen size {size}.")
-
-if size == 3:
-    add
+    size = int(input("What size would you like (1, 2, 3)? "))
+    
+    if size not in (1, 2, 3):
+        print("You cannot pick a number bigger than 3 or less than 1.")
+    else:
+        print(f"You have chosen size {size}.")
+        
+        total = coffee_prices[coffee] + (0.50 if size == 2 else 1.00 if size == 3 else 0)
+        print(f"The total price for your {size} size {coffee} is ${total:.2f}.")
