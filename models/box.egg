@@ -1,0 +1,20 @@
+# Placeholder Panda3D .egg model for a simple box
+<CoordinateSystem> { Z-up }
+<Group> box {
+  <VertexPool> box.verts {
+    <Vertex> 0 { 1 1 1 }
+    <Vertex> 1 { -1 1 1 }
+    <Vertex> 2 { -1 -1 1 }
+    <Vertex> 3 { 1 -1 1 }
+    <Vertex> 4 { 1 1 -1 }
+    <Vertex> 5 { -1 1 -1 }
+    <Vertex> 6 { -1 -1 -1 }
+    <Vertex> 7 { 1 -1 -1 }
+  }
+  <Polygon> { <Normal> { 0 0 1 } <VertexRef> { 0 1 2 3 <Ref> box.verts > } }
+  <Polygon> { <Normal> { 0 0 -1 } <VertexRef> { 4 5 6 7 <Ref> box.verts > } }
+  <Polygon> { <Normal> { 0 1 0 } <VertexRef> { 0 4 7 3 <Ref> box.verts > } }
+  <Polygon> { <Normal> { 1 0 0 } <VertexRef> { 0 1 5 4 <Ref> box.verts > } }
+  <Polygon> { <Normal> { 0 -1 0 } <VertexRef> { 1 2 6 5 <Ref> box.verts > } }
+  <Polygon> { <Normal> { -1 0 0 } <VertexRef> { 2 3 7 6 <Ref> box.verts > } }
+}
